@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Form</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="addressForm">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <br>
+
+        <input type="checkbox" id="sameAddress" name="sameAddress">
+        <label for="sameAddress">Mailing address same as billing address</label>
+
+        <br>
+
+        <div id="mailingAddress" class="hidden">
+            <label for="mailingAddressInput">Mailing Address:</label>
+            <input type="text" id="mailingAddressInput" name="mailingAddress" readonly>
+        </div>
+
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('sameAddress').addEventListener('change', function() {
+            var mailingAddressDiv = document.getElementById('mailingAddress');
+            var mailingAddressInput = document.getElementById('mailingAddressInput');
+
+            if (this.checked) {
+                // If checkbox is checked, copy billing address to mailing address
+                mailingAddressInput.value = document.getElementById('city').value;
+                mailingAddressDiv.classList.remove('hidden');
+            } else {
+                // If checkbox is unchecked, hide mailing address input
+                mailingAddressInput.value = '';
+                mailingAddressDiv.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('addressForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle form submission here if needed
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian States and Cities</title>
+</head>
+<body>
+
+    <form>
+        <label for="andhraPradesh">Andhra Pradesh</label>
+        <input type="checkbox" id="andhraPradesh" name="state" onchange="showCities('andhraPradesh')">
+        <input type="text" id="andhraPradeshCities" readonly>
+
+        <br>
+
+        <label for="karnataka">Karnataka</label>
+        <input type="checkbox" id="karnataka" name="state" onchange="showCities('karnataka')">
+        <input type="text" id="karnatakaCities" readonly>
+
+        <!-- Add more states as needed -->
+        <label for="up">up</label>
+        <input type="checkbox" id="karnataka" name="state" onchange="showCities('karnataka')">
+        <input type="text" id="karnatakaCities" readonly>
+        <label for="karnataka">Karnataka</label>
+        <input type="checkbox" id="karnataka" name="state" onchange="showCities('karnataka')">
+        <input type="text" id="karnatakaCities" readonly>
+
+    </form>
+
+    <script>
+        function showCities(state) {
+            var citiesInput = document.getElementById(state + 'Cities');
+            var citiesDropdown = document.createElement('select');
+            var cities;
+
+            // Define cities based on the selected state
+            switch (state) {
+                case 'andhraPradesh':
+                    cities = ['Visakhapatnam', 'Vijayawada', 'Tirupati', 'Guntur'];
+                    break;
+                case 'karnataka':
+                    cities = ['Bangalore', 'Mysuru', 'Hubli', 'Mangalore'];
+                    break;
+                // Add cases for more states
+                default:
+                    cities = [];
+            }
+
+            // Populate the dropdown with cities
+            cities.forEach(function(city) {
+                var option = document.createElement('option');
+                option.value = city;
+                option.text = city;
+                citiesDropdown.add(option);
+            });
+
+            // Attach the dropdown to the input field
+            citiesInput.parentNode.replaceChild(citiesDropdown, citiesInput);
+        }
+    </script>
+
+</body>
+</html>

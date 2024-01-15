@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Inter";
+      background-color: oldlace;
+    }
+
+    label,
+    button {
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input,
+    textarea {
+      border: 3px solid #eee;
+      padding: .4em 1em;
+      border-radius: 6px;
+    }
+
+    form {
+      display: grid;
+      grid-row-gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      margin-top: 10px;
+      background: #133EF5;
+      color: #fff;
+      padding: 10px 0;
+      border: 0;
+      border-radius: 6px;
+    }
+
+    .alg {
+      position: relative;
+      bottom: -27px;
+    }
+
+    #form2 {
+      margin:70px 530px;
+      border: 1px solid rgb(131, 29, 29);
+      padding: 25px;
+      border-radius: 10px;
+      background-color: #fff;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <h1 align="center">Welcome to my Registration form</h1>
+  
+    <form action="/submit" method="POST" enctype="multipart/form-data" id="form2">
+      <!-- <label for="email">Email Address</label>
+    <input type="email" id="email" name="email"> -->
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="NAME">
+
+
+      <!-- <label for="message">Message</label>
+    <textarea name="message" id="message"></textarea> -->
+      <label for="address">DOB</label>
+      <input type="date" id="date" name="date" />
+      <label for="" password>Password</label>
+      <input type="password" name="password" id="pswd" placeholder="Password" />
+      <label for="city">City</label>
+      <select id="city" name="city" class="form-select">
+        <option value="">Select City</option>
+        <option value="Alipur">Alipur</option>
+        <option value="Bawana">Bawana</option>
+        <option value="Central Delhi">Central Delhi</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Deoli">Deoli</option>
+        <option value="East Delhi">East Delhi</option>
+        <option value="Karol Bagh">Karol Bagh</option>
+        <option value="Najafgarh">Najafgarh</option>
+        <option value="Nangloi Jat">Nangloi Jat</option>
+        <option value="Narela">Narela</option>
+        <option value="New Delhi">New Delhi</option>
+        <option value="North Delhi">North Delhi</option>
+        <option value="North East Delhi">North East Delhi</option>
+        <option value="North West Delhi">North West Delhi</option>
+        <option value="Pitampura">Pitampura</option>
+        <option value="Rohini">Rohini</option>
+        <option value="South Delhi">South Delhi</option>
+        <option value="South West Delhi">South West Delhi</option>
+        <option value="West Delhi">West Delhi</option>
+      </select>
+      <label for="hobby">Hobby</label>
+      <div>
+        <input type="checkbox" id="scales" name="scales" checked />
+        <label for="playing">playing</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="horns" name="horns" />
+        <label for="horns">reading</label>
+      </div>
+
+      <!-- <label for="photo">Photo</label>
+    <input type="file" id="photo" name="photo"> -->
+      <!-- <label for="age">Age (between 0 and 50):</label>
+    <input type="range" id="vol" name="age" min="0" max="50"> -->
+      <p>What is your gender?</p>
+      <input type="radio" name="gender" value="male" class="alg"> Male
+      <input type="radio" name="gender" value="female" class="alg"> Female
+
+
+  <!-- <input type="radio" value="male" class="alg">male</input><br>
+    <!-- <label for="male" class="alg">male </label> -->
+
+  <!-- <input type="radio" class="alg"  >female</input>
+    <label for="female" class="alg">female</label> -->
+
+
+
+
+  <!-- <label for="age">DATE</label>
+    <input type="date" id="date" name="date">
+
+    <button type="submit">Submit</button> -->
+
+  </form>
+</body>
+
+</html>
